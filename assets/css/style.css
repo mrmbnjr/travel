@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/* -------------- Header ----------------- */
+header {
+    position: relative;
+    height: 75vh;
+    overflow: hidden;
+    color: white;
+    z-index: 1;
+}
+
+header img.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    filter: brightness(0.9) contrast(0.9);
+}
+
+nav {
+    height: 12vh;
+    background-color: rgba(0, 0, 0, 0.71);
+    position: relative;
+    z-index: 1;
+}
+
+.logo-text {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand img {
+    max-height: 80px;
+    width: auto;
+    object-fit: contain;
+}
+
+.navbar-brand p {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.tagline {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    text-shadow: 2px 2px 6px rgb(0, 0, 0), 4px 4px 9px rgb(0, 0, 0);
+    white-space: nowrap;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+    .tagline {
+        font-size: 0.9rem;
+    }
+    .navbar-brand img {
+        max-height: 64px;
+    }
+
+}
+
+@media (max-width: 576px) {
+    .tagline {
+        font-size: 0.7rem;
+    }
+    .navbar-brand img {
+        max-height: 55px;
+    }
+}
+
+.nav-link{
+    color: white !important;
+    font-weight: 600;
+    text-shadow: 4px 4px 9px rgb(0, 0, 0);
+}
+
+.page-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    text-align: center;
+    padding: 20px;
+    width: 90%;
+    max-width: 700px;
+    margin-top: 35px;
+}
+.page-title h2 {
+    font-size: 2.5rem;
+    font-weight: 1000;
+    text-shadow: 2px 2px 6px rgb(0, 0, 0), 4px 4px 9px rgb(0, 0, 0);
+}
+
+.page-title p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 6px rgb(0, 0, 0), 4px 4px 9px rgb(0, 0, 0);
+}
+
+.page-title button {
+    margin-top: 40px;
+    padding: 11px 15px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    background-color: rgb(0, 0, 0);
+}
+
+/* -------------- Body --------------- */
+.container {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8rem;
+    margin-top: 3rem;
+}
+
+.container h2 {
+    margin: 2.5rem;
+    font-size: 2.5rem;
+    font-weight: 1000;
+    text-align: center;
+}  
+.wrapper {
+    max-width: 1100px;
+    width: 100%;
+    position: relative;
+
+}
+
+.wrapper i {
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    font-size: 7rem;
+    transform: translateY(-50%);
+    z-index: 10;
+    color: #393939;
+    transition: background 0.3s ease;
+}
+
+.wrapper i:first-child {
+    left: -100px;
+}
+
+.wrapper i:last-child {
+    right: -100px;
+}
+
+.wrapper .carousel {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 4) - 4px);
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: 0;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel :where(.card, .img) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel.dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+}
+
+.carousel.no-transition {
+    scroll-behavior: auto;
+}
+
+.carousel.dragging .card {
+    cursor: grab;
+    user-select: none;
+}
+
+.carousel .card {
+    scroll-snap-align: start;
+    height: 280px;
+    list-style: none;
+    background: #fff;
+    border-radius: 8px;
+    display: flex;
+    cursor: pointer;
+    width: 98%;
+    padding-bottom: 15px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.card .img {
+    border-radius: 5%;
+    margin-bottom: 20px;
+
+}
+
+.card .img img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 5%;
+    border: 4px solid #fff;
+}
+
+.card h2 {
+    font-weight: bold;
+    font-size: 1.56rem;
+    margin: 15px 0 10px;
+}
+
+.card span {
+    color: #6a6d78;
+    font-size: 1.31rem;
+
+}
+
+@media screen and (max-width: 900px) {
+    .wrapper .carousel {
+        grid-auto-columns: calc((100% / 3) - 9px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .wrapper .carousel {
+        grid-auto-columns: 100%;
+    }
+}
