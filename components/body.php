@@ -1,7 +1,7 @@
+<!-- Carousel Section -->
 <div class="container">
-  <!-- Carousel Section -->
   <h2>Rental Cars Available </h2>
-  <div class="wrapper">
+  <div class="wrapper d-flex align-items-center">
     <i id="left" class="bi bi-chevron-compact-left"></i>
       <ul class="carousel">
       <li class="card">
